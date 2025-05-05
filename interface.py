@@ -88,6 +88,17 @@ class App(ctk.CTk):
         )
         instrucoes.pack(pady=10)
         
+        # Botão mostrar exemplo
+        btn_exemplo = ctk.CTkButton(
+            frame,
+            text="Mostrar arquivo de exemplo",
+            command=self.abrir_arquivo_exemplo,
+            width=200,
+            fg_color="transparent",
+            border_width=2
+        )
+        btn_exemplo.pack(pady=10)
+        
         # Frame para agrupar entrada e botão
         input_frame = ctk.CTkFrame(frame)
         input_frame.pack(pady=20)
@@ -196,6 +207,11 @@ class App(ctk.CTk):
         """Abre o explorador de arquivos na pasta de downloads"""
         output_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "Karaokes baixados")
         os.startfile(output_dir)
+
+    def abrir_arquivo_exemplo(self):
+        """Abre o arquivo de exemplo no bloco de notas"""
+        exemplo_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "exemplo.txt")
+        os.startfile(exemplo_path)
 
     def mostrar_progresso(self):
         """Quarta página - Progresso dos downloads"""
