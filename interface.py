@@ -38,7 +38,7 @@ class App(ctk.CTk):
         # Título
         titulo = ctk.CTkLabel(
             frame, 
-            text="Olá, Marica!\nBem-vindo ao Baixador de Karaokês!\n\n",
+            text="Olá, Marica!\nBem-vindo ao Baixador de Karaokês!\n\n\n\n",
             font=("Arial", 24, "bold"),
             text_color="white"
         )
@@ -47,7 +47,7 @@ class App(ctk.CTk):
         # Descrição
         descricao = ctk.CTkLabel(
             frame,
-            text="Para o terror dos vizinhos, este programa permite baixar\nkaraokês do YouTube de forma fácil e rápida.\n\n ",
+            text="Para o terror dos vizinhos, este programa permite baixar\nkaraokês do YouTube de forma fácil e rápida para\n você cantar suas músicas preferidas sempre.\n\n\n\n ",
             font=("Arial", 14)
         )
         descricao.pack(pady=20)
