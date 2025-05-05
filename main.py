@@ -14,22 +14,16 @@ def setup_output_dir():
     return output_dir
 
 def download_karaoke(nome_musica, numero, output_dir, progress_callback=None):
-    """Baixa e converte um vídeo de karaokê"""
+    """Baixa um vídeo de karaokê"""
     termo_pesquisa = f"{nome_musica} karaoke"
     nome_arquivo = f"{numero} - {nome_musica}"
     caminho_saida = os.path.join(output_dir, f"{nome_arquivo}.%(ext)s")
 
     ydl_opts = {
-        'format': 'mp4',  # Formato simplificado
+        'format': 'best[ext=mp4]',  # Seleciona o melhor formato MP4 disponível
         'outtmpl': caminho_saida,
         'noplaylist': True,
-        'quiet': True,
-        'postprocessors': [{
-            'key': 'FFmpegVideoConvertor',
-            'preferedformat': 'mp4',
-        }],
-        'prefer_ffmpeg': True,
-        'keepvideo': True
+        'quiet': True
     }
 
     try:
